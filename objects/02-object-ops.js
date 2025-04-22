@@ -88,11 +88,41 @@ for (let restaurant of restaurants) {
 
 // TODO: create objects and put them in an array
 
+let attraction1 = {
+	name: "Zoo",
+	location: "St louis",
+	adultTicketPrice: 50,
+	childTicketPrice: 25,
+	famousFeatures: ["Sea Lion","River's Edge","Aquarium"]
+}
+
+let attraction2 = {
+	name: "Botanical Garden",
+	location: "St louis",
+	adultTicketPrice: 20,
+	childTicketPrice: 5,
+	famousFeatures: ["Butterfly House","Play area","Historical Displays"]
+}
+
+let attractions = [attraction1, attraction2];
 /*
 	Loop through the array, then within that for loop, use a for...in loop to grab values from each key and print them to the console. If you come across a key storing an array, print each element in the array instead of the array itself. Remember that you need a new index variable with each nested FOR loop (i, j are common).
 
 	NOTE: This is a tough one to think through when you're new at this. If you get completely stuck, reference the solution that accompanies this starter code. But make an effort to figure it out yourself first!
 */
+
+for (let i of attractions){
+	for(let j in i){
+		if (Array.isArray(i[j])){
+			console.log(`${j}:`);
+			for(let k of i[j]){
+				console.log(` - ${k}`);
+			}
+		}else{
+			console.log(`${j}: ${i[j]}`);
+		}
+	}
+}
 
 // TODO: use nested loops to print values inside objects
 
@@ -107,3 +137,12 @@ for (let restaurant of restaurants) {
 
 // TODO: Print a template literal
 
+for (let i of attractions) {
+	console.log("**********************************************");
+	console.log(`${i.name}  -  ${i.location}`);
+	console.log("**********************************************");
+
+let features = i.famousFeatures.join(", ");
+	console.log(`A favorite with the locals, the ${i.name} boasts over a dozen features, including the ${features}. Admission is $${i.adultTicketPrice} for adults, $${i.childTicketPrice} for children ages 5-12, and free for children 4 and under.\n`);
+
+}
