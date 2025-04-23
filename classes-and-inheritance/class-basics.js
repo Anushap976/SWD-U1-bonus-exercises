@@ -63,7 +63,13 @@ console.log(mapleBaconBar); // now all three toppings show up
 
 // TODO: What's your favorite type of unbelievably fattening, sugary deliciousness?
 
-
+let strawberryChocolateDelight = new Donut("yeast", "filled", true);
+strawberryChocolateDelight.filling = "strawberry jam";
+strawberryChocolateDelight.icing = "rich chocolate glaze";
+strawberryChocolateDelight.toppings = ["white chocolate shavings", "freeze-dried strawberries"];
+console.log(strawberryChocolateDelight);
+strawberryChocolateDelight.toppings.push("sprinkles");
+console.log(strawberryChocolateDelight);
 
 /**** OPTIONAL PARAMETERS ****/
 
@@ -100,7 +106,11 @@ console.log(mansionOnMainStreet);
 
 // TODO: Pretend you're a realtor. Create 3-4 more houses, some with and some without optional parameters
 
+let townhouseOnCarmelWoods = new HouseForSale("townhouse", 2010, 310000, 1850, 3, 2.5, true);
+console.log(townhouseOnCarmelWoods);
 
+let ranchOnCaledonia = new HouseForSale("ranch", 2020, 289000, 2100, 3, 2, false, true);
+console.log(ranchOnCaledonia);
 
 /**** CLASS METHODS ****/
 
@@ -148,7 +158,15 @@ yellowBellPepper.calculateTotal(5); // 5 peppers
 // TODO: What's going in your dinner salad tonight? Create 3-4 more objects, then call 
 // describe() and calculateTotal() for each
 
+let cucumber = new Produce("cucumber", "vegetable", "each", 0.89);
+console.log(cucumber);
+cucumber.describe();
+cucumber.calculateTotal(3); // 3 cucumbers
 
+let fetaCheese = new Produce("feta cheese", "dairy", "ounce", 0.60);
+console.log(fetaCheese);
+fetaCheese.describe();
+fetaCheese.calculateTotal(4); // 4 ounces
 
 /**** TIME TO FLY SOLO ****/
 
@@ -160,18 +178,32 @@ yellowBellPepper.calculateTotal(5); // 5 peppers
 	Write a method outside the constructor called describe() that incorporates all three properties into a sentence and prints it to the console. Remember the syntax you must use to reference the properties that are inside the constructor.
 */
 
+class Instrument {
+	constructor(name, category, soundsLike) {
+	  this.name = name;
+	  this.category = category;
+	  this.soundsLike = soundsLike;
+	}
+  
+	describe() {
+	  console.log(
+		`The ${this.name} is a ${this.category} instrument. It sounds like ${this.soundsLike}.`
+	  );
+	}
+  }
+
 
 
 // TODO: Once your class is complete, un-comment the lines below to test it out.
 
-// let violin = new Instrument("violin", "string", "a whirlwind romance -- and the inevitable heartbreak that follows after");
-// violin.describe();
+let violin = new Instrument("violin", "string", "a whirlwind romance -- and the inevitable heartbreak that follows after");
+violin.describe();
 
-// let tuba = new Instrument("tuba", "brass", "Mr. Snuffleupagus trying to dance");
-// tuba.describe();
+let tuba = new Instrument("tuba", "brass", "Mr. Snuffleupagus trying to dance");
+tuba.describe();
 
-// let ukelele = new Instrument("ukelele", "string", "Barney and the Teletubbies got drunk and filmed a Hawaiian special together");
-// ukelele.describe();
+let ukelele = new Instrument("ukelele", "string", "Barney and the Teletubbies got drunk and filmed a Hawaiian special together");
+ukelele.describe();
 
-// let bagpipe = new Instrument("bagpipe", "woodwind", "200 third-graders had a recorder recital next to a turbojet engine roaring at full throttle");
-// bagpipe.describe();
+let bagpipe = new Instrument("bagpipe", "woodwind", "200 third-graders had a recorder recital next to a turbojet engine roaring at full throttle");
+bagpipe.describe();
