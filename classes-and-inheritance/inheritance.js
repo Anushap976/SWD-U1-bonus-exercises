@@ -232,4 +232,25 @@ console.log(cokeZero instanceof Juice);
     Print the objects and call methods on a few of them
 */
 
+class Milk extends Beverage {
+    constructor(name, ounces, container, source, isNonDairy = false, flavoring = null){
+     super(name, ounces, container);
+     this.source = source;
+     this.isNonDairy = isNonDairy;
+     this.flavoring = flavoring;
+    }
+    describe(){
+        super.describe();
+        console.log(`I love to drink ${this.source} everyday because its ${this.isNonDairy} which flavors ${this.flavoring}`);
+    }
+}
 
+almondMilk = new Milk("Almond Milk", 20, "bottle", "Almond", true);
+wholeMilk = new Milk("Whole Milk", 30, "bottle", "Dairy");
+soyMilk = new Milk("Soy Milk", 10, "box", "Soy", true, "Vanila");
+chocolateMilk = new Milk("Chocolate Milk", 15, "Tetrapack", "chocolate", false, "Chocolate");
+console.log(almondMilk);
+console.log(wholeMilk);
+console.log(soyMilk);
+console.log(chocolateMilk);
+almondMilk.describe();
