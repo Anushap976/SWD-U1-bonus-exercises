@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Carolista/SWD-U1-bonus-exercises#readme",
   "dependencies": {
-    "jest": "^29.7.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
